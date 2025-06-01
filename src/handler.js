@@ -13,7 +13,7 @@ const addClassifyHandler = (request, h) => {
     }
 
     // Langsung proses gambar dari memori (mock klasifikasi)
-    const mockLabels = ['Organik', 'Anorganik', 'B3'];
+    const mockLabels = ['Organik', 'Anorganik'];
     const label = mockLabels[Math.floor(Math.random() * mockLabels.length)];
     const confidence = Math.random(); // Confidence antara 0-1
 
