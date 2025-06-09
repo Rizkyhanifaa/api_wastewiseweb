@@ -1,14 +1,14 @@
 # 🗑️ WasteWise Web API – Klasifikasi Sampah Organik & Anorganik 
 
-API ini adalah bagian backend dari proyek capstone **WasteWiseWeb**, yang berfungsi untuk mengklasifikasikan gambar sampah menjadi **organik** dan **anorganik**.
+API ini adalah bagian backend dari proyek capstone **WasteWiseWeb**, yang berfungsi untuk memberikan data rekomendasi pengolahan sampah.
 
-Deploy:  
-🌐 [https://hapi-webapp123-gea7b4bbhbengbdv.indonesiacentral-01.azurewebsites.net/classify](https://hapi-webapp123-gea7b4bbhbengbdv.indonesiacentral-01.azurewebsites.net/classify)
+🌐 Deploy:  
+[https://hapi-webapp123-gea7b4bbhbengbdv.indonesiacentral-01.azurewebsites.net]
 
 ## ✨ Fitur
 
-- Endpoint `POST /classify` untuk mengunggah gambar sampah.
-- API akan mengembalikan label klasifikasi (`Organik` dan `Anorganik`) dan confidence (tingkat keyakinan).
+- Endpoint `GET/recommendations/${specificWasteType}` untuk mendapatkan data rekomendasi pengolahan sampah.
+- Parameter `specificWasteType` digunakan untuk mengenali jenis sampah secara spesifik, seperti plastic, biological, battery, dll.) sebagai bagian dari URL
 - Dirancang untuk diintegrasikan dengan frontend WasteWiseWeb.
 
 ## 🛠️ Teknologi
@@ -22,8 +22,9 @@ Deploy:
 api_wastewiseweb/
 │
 ├── src/
-│ ├── classify.js # Penyimpanan array untuk data klasifikasi
-│ ├── handler.js # Handler utama untuk endpoint klasifikasi
+│ ├── data/
+| |   └── recommendations.js # Data dan fungsi untuk rekomendasi pengolahan sampah
+│ ├── handler.js # Handler utama untuk endpoint rekomendasi pengolahan sampah
 │ ├── routes.js # Routing konfigurasi untuk server HapiJS
 │ └── server.js # Inisialisasi dan konfigurasi server HapiJS
 │
