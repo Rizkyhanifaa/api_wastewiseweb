@@ -1,20 +1,11 @@
-const { addClassifyHandler } = require('./handler');
+const { getRecommendationHandler } = require('./handler');
 
 const routes = [
- {
-   method: 'POST',
-   path: '/classify',
-   handler: addClassifyHandler,
-   options: {
-      payload: {
-        output: 'stream',
-        parse: true,
-        allow: 'multipart/form-data',
-        multipart: true, 
-        maxBytes: 5 * 1024 * 1024, // 5 MB max
-      },
-    },
- },
+  {
+    method: 'GET', 
+    path: '/recommendations/{wasteType}', 
+    handler: getRecommendationHandler,
+  },
 ];
- 
+
 module.exports = routes;
